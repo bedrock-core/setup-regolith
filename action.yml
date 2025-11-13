@@ -1,0 +1,17 @@
+name: 'Regolith Action'
+description: 'A reusable GitHub Action'
+author: 'Your Name'
+
+inputs:
+  example-input:
+    description: 'An example input'
+    required: false
+    default: 'default value'
+
+outputs:
+  example-output:
+    description: 'An example output'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
