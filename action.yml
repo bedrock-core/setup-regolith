@@ -1,6 +1,6 @@
-name: 'setup-regolith'
+name: 'Setup Regolith CLI'
 description: 'Download and add Regolith CLI to PATH inside GitHub Actions'
-author: 'Your Name'
+author: 'bedrock-core'
 
 inputs:
   regolith-version:
