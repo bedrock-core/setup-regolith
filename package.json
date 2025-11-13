@@ -1,7 +1,7 @@
 {
   "name": "setup-regolith",
   "version": "1.0.0",
-  "description": "A reusable GitHub Action",
+  "description": "GitHub Action to download the Regolith CLI and add it to PATH",
   "main": "dist/index.js",
   "scripts": {
     "build": "ncc build src/index.ts -o dist --license licenses.txt",
