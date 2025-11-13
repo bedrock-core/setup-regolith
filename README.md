@@ -1,6 +1,6 @@
-# Regolith Action
+# setup-regolith
 
-A reusable GitHub Action built with TypeScript.
+GitHub Action to download the Regolith CLI and add it to `PATH` so you can run `regolith` in your workflow steps.
 
 ## Usage
 
@@ -13,18 +13,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: your-username/regolith-action@v1
+
+      - name: Set up Regolith
+        uses: bedrock-core/setup-regolith@v1
         with:
-          example-input: 'custom value'
+          regolith-version: '1.6.1' # or 'latest'
+          resolvers: |
+            github.com/bedrock-core/regolith-filters
+
+      - name: Run Regolith profile
+        run: regolith run release
 ```
 
 ## Inputs
 
-- `example-input`: An example input (optional, default: 'default value')
+- `regolith-version` (optional)
+  - Version of Regolith to install from GitHub releases (e.g. `latest`, `1.6.1`).
+  - Default: `latest`.
 
-## Outputs
+- `resolvers` (optional)
+  - Newline- or comma-separated list of resolver URLs to append via:
+    - `regolith config resolvers --append <resolver-url>`
+  - Example: `github.com/bedrock-core/regolith-filters`.
 
-- `example-output`: An example output
+After the `setup-regolith` step completes, `regolith` is available on `PATH` for all subsequent steps in the same job.
+
+## Behavior
+
+- Downloads the appropriate Regolith binary for the runner OS from the Regolith GitHub releases.
+- Extracts and caches it using the GitHub Actions tool cache.
+- Adds the binary directory to `PATH`.
+- Optionally appends any provided resolver URLs to the Regolith configuration.
+- Does **not** run any Regolith profiles itself; you stay in control and run `regolith` as needed.
 
 ## Development
 
@@ -46,7 +66,7 @@ yarn build
 yarn package
 ```
 
-This project uses Yarn 4 with node_modules linker.
+This project uses Yarn 4 with the `node-modules` linker.
 
 ## License
 

@@ -15,7 +15,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@actions/exec@npm:^1.1.1":
+"@actions/exec@npm:^1.0.0, @actions/exec@npm:^1.1.1":
   version: 1.1.1
   resolution: "@actions/exec@npm:1.1.1"
   dependencies:
@@ -49,10 +49,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@actions/io@npm:^1.0.1":
+"@actions/io@npm:^1.0.1, @actions/io@npm:^1.1.1":
   version: 1.1.3
   resolution: "@actions/io@npm:1.1.3"
   checksum: 10c0/5b8751918e5bf0bebd923ba917fb1c0e294401e7ff0037f32c92a4efa4215550df1f6633c63fd4efb2bdaae8711e69b9e36925857db1f38935ff62a5c92ec29e
+  languageName: node
+  linkType: hard
+
+"@actions/tool-cache@npm:^2.0.1":
+  version: 2.0.2
+  resolution: "@actions/tool-cache@npm:2.0.2"
+  dependencies:
+    "@actions/core": "npm:^1.11.1"
+    "@actions/exec": "npm:^1.0.0"
+    "@actions/http-client": "npm:^2.0.1"
+    "@actions/io": "npm:^1.1.1"
+    semver: "npm:^6.1.0"
+  checksum: 10c0/bc04870b59b969717bdc4966fa1fca8263d5e968bfb73e5dfac02018e6180ae5752d6d209a2a1e483219325389aaf62e9f8ebb80f04d77686e386a630481adfd
   languageName: node
   linkType: hard
 
@@ -797,7 +810,9 @@ __metadata:
   resolution: "regolith-action@workspace:."
   dependencies:
     "@actions/core": "npm:^1.11.1"
+    "@actions/exec": "npm:^1.1.1"
     "@actions/github": "npm:^6.0.1"
+    "@actions/tool-cache": "npm:^2.0.1"
     "@types/node": "npm:^24.10.1"
     "@vercel/ncc": "npm:^0.38.4"
     typescript: "npm:^5.9.3"
@@ -815,6 +830,15 @@ __metadata:
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
   checksum: 10c0/7e3c8b2e88a1841c9671094bbaeebd94448111dd90a81a1f606f3f67708a6ec57763b3b47f06da09fc6054193e0e6709e77325415dc8422b04497a8070fa02d4
+  languageName: node
+  linkType: hard
+
+"semver@npm:^6.1.0":
+  version: 6.3.1
+  resolution: "semver@npm:6.3.1"
+  bin:
+    semver: bin/semver.js
+  checksum: 10c0/e3d79b609071caa78bcb6ce2ad81c7966a46a7431d9d58b8800cfa9cb6a63699b3899a0e4bcce36167a284578212d9ae6942b6929ba4aa5015c079a67751d42d
   languageName: node
   linkType: hard
 

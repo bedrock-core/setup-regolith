@@ -1,16 +1,16 @@
-name: 'Regolith Action'
-description: 'A reusable GitHub Action'
+name: 'setup-regolith'
+description: 'Download and add Regolith CLI to PATH inside GitHub Actions'
 author: 'Your Name'
 
 inputs:
-  example-input:
-    description: 'An example input'
+  regolith-version:
+    description: 'Regolith version to install from GitHub releases (e.g. latest, 1.6.1)'
     required: false
-    default: 'default value'
+    default: 'latest'
 
-outputs:
-  example-output:
-    description: 'An example output'
+  resolvers:
+    description: 'Comma-separated list of resolver URLs to append via "regolith config resolvers --append"'
+    required: false
 
 runs:
   using: 'node20'

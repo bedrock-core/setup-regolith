@@ -1,28 +1,40 @@
 {
-  "name": "regolith-action",
+  "name": "setup-regolith",
   "version": "1.0.0",
   "description": "A reusable GitHub Action",
   "main": "dist/index.js",
   "scripts": {
     "build": "ncc build src/index.ts -o dist --source-map --license licenses.txt",
     "package": "yarn build",
-    "test": "jest",
-    "all": "yarn build && yarn test"
+    "test": "jest"
   },
   "keywords": [
     "github",
-    "actions"
+    "actions",
+    "regolith",
+    "minecraft",
+    "bedrock",
+    "addons"
   ],
-  "author": "",
+  "author": "DrAv0011",
+  "contributors": [
+    {
+      "name": "DrAv0011",
+      "email": "contact@drav.dev",
+      "url": "https://drav.dev"
+    }
+  ],
   "license": "MIT",
   "packageManager": "yarn@4.11.0",
   "devDependencies": {
+    "@actions/exec": "^1.1.1",
     "@types/node": "^24.10.1",
     "@vercel/ncc": "^0.38.4",
     "typescript": "^5.9.3"
   },
   "dependencies": {
     "@actions/core": "^1.11.1",
-    "@actions/github": "^6.0.1"
+    "@actions/github": "^6.0.1",
+    "@actions/tool-cache": "^2.0.1"
   }
 }
