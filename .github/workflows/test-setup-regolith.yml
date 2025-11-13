@@ -1,0 +1,29 @@
+name: Test setup-regolith
+
+on:
+  workflow_dispatch:
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build action
+        run: |
+          corepack enable
+          yarn install
+          yarn build
+
+      - name: Run setup-regolith from repo
+        uses: ./
+        with:
+          regolith-version: '1.6.1'
+          resolvers: |
+            github.com/bedrock-core/regolith-filters
+
+      - name: Check Regolith version
+        run: regolith --version
+
+      - name: Run Regolith help
+        run: regolith --help

@@ -805,20 +805,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"regolith-action@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "regolith-action@workspace:."
-  dependencies:
-    "@actions/core": "npm:^1.11.1"
-    "@actions/exec": "npm:^1.1.1"
-    "@actions/github": "npm:^6.0.1"
-    "@actions/tool-cache": "npm:^2.0.1"
-    "@types/node": "npm:^24.10.1"
-    "@vercel/ncc": "npm:^0.38.4"
-    typescript: "npm:^5.9.3"
-  languageName: unknown
-  linkType: soft
-
 "retry@npm:^0.12.0":
   version: 0.12.0
   resolution: "retry@npm:0.12.0"
@@ -850,6 +836,20 @@ __metadata:
   checksum: 10c0/4afe5c986567db82f44c8c6faef8fe9df2a9b1d98098fc1721f57c696c4c21cebd572f297fc21002f81889492345b8470473bc6f4aff5fb032a6ea59ea2bc45e
   languageName: node
   linkType: hard
+
+"setup-regolith@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "setup-regolith@workspace:."
+  dependencies:
+    "@actions/core": "npm:^1.11.1"
+    "@actions/exec": "npm:^1.1.1"
+    "@actions/github": "npm:^6.0.1"
+    "@actions/tool-cache": "npm:^2.0.1"
+    "@types/node": "npm:^24.10.1"
+    "@vercel/ncc": "npm:^0.38.4"
+    typescript: "npm:^5.9.3"
+  languageName: unknown
+  linkType: soft
 
 "shebang-command@npm:^2.0.0":
   version: 2.0.0
