@@ -4,7 +4,7 @@
   "description": "GitHub Action to download the Regolith CLI and add it to PATH",
   "main": "dist/index.js",
   "scripts": {
-    "build": "ncc build src/index.ts -o dist --license licenses.txt",
+    "build": "esbuild src/index.ts --bundle --platform=node --format=cjs --outfile=dist/index.js",
     "package": "yarn build",
     "test:act": "act workflow_dispatch -W .github/workflows/test-setup-regolith.yml -j smoke-test -P ubuntu-latest=node:20-bullseye"
   },
@@ -27,14 +27,14 @@
   "license": "MIT",
   "packageManager": "yarn@4.11.0",
   "devDependencies": {
-    "@actions/exec": "^1.1.1",
-    "@types/node": "^24.10.1",
-    "@vercel/ncc": "^0.38.4",
-    "typescript": "^5.9.3"
+    "@types/node": "^25.6.2",
+    "esbuild": "latest",
+    "typescript": "^6.0.3"
   },
   "dependencies": {
-    "@actions/core": "^1.11.1",
-    "@actions/github": "^6.0.1",
-    "@actions/tool-cache": "^2.0.1"
+    "@actions/core": "^3.0.1",
+    "@actions/exec": "^3.0.0",
+    "@actions/github": "^9.1.1",
+    "@actions/tool-cache": "^4.0.0"
   }
 }
